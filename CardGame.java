@@ -52,18 +52,39 @@ public class CardGame {
         System.out.println("Cards loaded:");
         cardList.displayList();
 		
-		Card[] playerHand = new Card[5];
-		for(int i = 0; i < playerHand.length; i++)
-			playerHand[i] = cardList.getFirst();
-		
-		System.out.println("players hand");
-		for(int i = 0; i < playerHand.length; i++)
-			System.out.println(playerHand[i]);
+		Card[] player1Hand = new Card[1];
+		for(int i = 0; i < player1Hand.length; i++)
+			player1Hand[i] = cardList.getFirst();
+            
+        Card[] player2Hand = new Card[1];
+		for(int i = 0; i < player2Hand.length; i++)
+			player2Hand[i] = cardList.getFirst();
+
+		System.out.println("Player 1's hand");
+		for(int i = 0; i < player1Hand.length; i++)
+			System.out.println(player1Hand[i]);
+        System.out.println("Player 2's hand");
+        for(int i = 0; i < player2Hand.length; i++)
+			System.out.println(player2Hand[i]);
+
+        if (player1Hand[0].getCardValue() > player2Hand[0].getCardValue()) {
+            System.out.println("Player 1 wins!");
+        }
+        else if (player1Hand[0].getCardValue() == player2Hand[0].getCardValue()) {
+            System.out.println("It's a draw!");
+        }
+        else {
+            System.out.println("Player 2 wins!");
+        }
+
+
 		
 		System.out.println();
-        //Edit - Commented this out to remove massive print statement
+        //Edit - Commented this out to remove massive print statement -XQ
 		//System.out.println("the deck");
 		//cardList.displayList();
+
+        //War – Each player draws the top card, higher card wins the round.
 
 	}//end main
 
