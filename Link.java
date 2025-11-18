@@ -1,4 +1,5 @@
 //Xandra Quevedo
+//Brice Yang
 //11-18-25
 //Link.java - Simple class for linked list functionality
 //linkList2.java

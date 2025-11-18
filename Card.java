@@ -1,4 +1,5 @@
 //Xandra Quevedo
+//Brice Yang
 //11-18-25
 //Card.java - Card class for making card objects
 

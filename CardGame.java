@@ -1,4 +1,5 @@
-//Xandra Quevedo
+//Xandra Quevedo 
+//Brice Yang
 //11-18-25
 //CardGame.java - Main class for the card game
 
@@ -7,11 +8,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collections;
 //import java.util.ArrayList;
 //import java.util.List;
 import java.util.Scanner;
-
-
 
 public class CardGame {
 	
@@ -46,17 +46,19 @@ public class CardGame {
             }
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
-        }
 
         // Print the loaded cards
         System.out.println("Cards loaded:");
         cardList.displayList();
 		
+        //Added counts for rounds and both player's individual wins per round
         int roundCount = 0;
         int player1Wins = 0;
         int player2Wins = 0;
         
+        //The game runs while the roundCount is under 3, so three rounds are played
         while (roundCount < 3) {
+            //Each player's card is initialized
 		    Card[] player1Hand = new Card[1];
 		    for(int i = 0; i < player1Hand.length; i++)
 			    player1Hand[i] = cardList.getFirst();
@@ -65,13 +67,17 @@ public class CardGame {
 		    for(int i = 0; i < player2Hand.length; i++)
 			    player2Hand[i] = cardList.getFirst();
 
-		    System.out.println("Player 1's hand");
+            //Each player's card is printed
+		    System.out.println("Player 1's card");
 		    for(int i = 0; i < player1Hand.length; i++)
 			    System.out.println(player1Hand[i]);
-            System.out.println("Player 2's hand");
+            System.out.println("Player 2's card");
             for(int i = 0; i < player2Hand.length; i++)
 		    	System.out.println(player2Hand[i]);
 
+            //Compare the card values to determine the round's winner,
+            //and increment their win count
+            //If it's a draw, no win count is increased
             if (player1Hand[0].getCardValue() > player2Hand[0].getCardValue()) {
                 System.out.println("Player 1 wins this round!");
                 player1Wins++;
@@ -85,27 +91,26 @@ public class CardGame {
                 player2Wins++;
             }
 
+            //Increment roundCount to go to the next round
             roundCount++;
+            System.out.println();
         }
 
+        //Compare individual player wins to determine the overall winner
         if(player1Wins > player2Wins) {
             System.out.println("Player 1 wins the game!");
         }
-        else if (player1Wins == player2wins) {
+        else if (player1Wins == player2Wins) {
             System.out.println("It's a draw! Nobody wins!");
         }
         else {
             System.out.println("Player 2 wins the game!");
         }
-
-
 		
 		System.out.println();
         //Edit - Commented this out to remove massive print statement -XQ
 		//System.out.println("the deck");
 		//cardList.displayList();
-
-        //War – Each player draws the top card, higher card wins the round.
 
 	}//end main
 

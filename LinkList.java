@@ -1,4 +1,5 @@
 //Xandra Quevedo
+//Brice Yang
 //11-18-25
 //LinkList.java - Code implementing linked list
 public class LinkList
