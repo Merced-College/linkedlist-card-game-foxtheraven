@@ -1,4 +1,6 @@
-
+//Xandra Quevedo
+//11-18-25
+//LinkList.java - Code implementing linked list
 public class LinkList
 {
 	private Link first;            // ref to first link on list

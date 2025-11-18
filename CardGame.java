@@ -1,4 +1,6 @@
-//package linkedLists;
+//Xandra Quevedo
+//11-18-25
+//CardGame.java - Main class for the card game
 
 import java.io.BufferedReader;
 import java.io.File;

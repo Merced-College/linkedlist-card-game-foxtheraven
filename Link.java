@@ -1,4 +1,6 @@
-//package linkedLists;
+//Xandra Quevedo
+//11-18-25
+//Link.java - Simple class for linked list functionality
 //linkList2.java
 //demonstrates linked list
 //to run this program: C>java LinkList2App
