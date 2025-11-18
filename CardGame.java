@@ -61,8 +61,9 @@ public class CardGame {
 			System.out.println(playerHand[i]);
 		
 		System.out.println();
-		System.out.println("the deck");
-		cardList.displayList();
+        //Edit - Commented this out to remove massive print statement
+		//System.out.println("the deck");
+		//cardList.displayList();
 
 	}//end main
 
