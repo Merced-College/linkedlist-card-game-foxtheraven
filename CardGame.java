@@ -52,29 +52,50 @@ public class CardGame {
         System.out.println("Cards loaded:");
         cardList.displayList();
 		
-		Card[] player1Hand = new Card[1];
-		for(int i = 0; i < player1Hand.length; i++)
-			player1Hand[i] = cardList.getFirst();
+        int roundCount = 0;
+        int player1Wins = 0;
+        int player2Wins = 0;
+        
+        while (roundCount < 3) {
+		    Card[] player1Hand = new Card[1];
+		    for(int i = 0; i < player1Hand.length; i++)
+			    player1Hand[i] = cardList.getFirst();
             
-        Card[] player2Hand = new Card[1];
-		for(int i = 0; i < player2Hand.length; i++)
-			player2Hand[i] = cardList.getFirst();
+            Card[] player2Hand = new Card[1];
+		    for(int i = 0; i < player2Hand.length; i++)
+			    player2Hand[i] = cardList.getFirst();
 
-		System.out.println("Player 1's hand");
-		for(int i = 0; i < player1Hand.length; i++)
-			System.out.println(player1Hand[i]);
-        System.out.println("Player 2's hand");
-        for(int i = 0; i < player2Hand.length; i++)
-			System.out.println(player2Hand[i]);
+		    System.out.println("Player 1's hand");
+		    for(int i = 0; i < player1Hand.length; i++)
+			    System.out.println(player1Hand[i]);
+            System.out.println("Player 2's hand");
+            for(int i = 0; i < player2Hand.length; i++)
+		    	System.out.println(player2Hand[i]);
 
-        if (player1Hand[0].getCardValue() > player2Hand[0].getCardValue()) {
-            System.out.println("Player 1 wins!");
+            if (player1Hand[0].getCardValue() > player2Hand[0].getCardValue()) {
+                System.out.println("Player 1 wins this round!");
+                player1Wins++;
+            }
+      
+            else if (player1Hand[0].getCardValue() == player2Hand[0].getCardValue()) {
+                System.out.println("It's a draw!");
+            }
+            else {
+                System.out.println("Player 2 wins this round!");
+                player2Wins++;
+            }
+
+            roundCount++;
         }
-        else if (player1Hand[0].getCardValue() == player2Hand[0].getCardValue()) {
-            System.out.println("It's a draw!");
+
+        if(player1Wins > player2Wins) {
+            System.out.println("Player 1 wins the game!");
+        }
+        else if (player1Wins == player2wins) {
+            System.out.println("It's a draw! Nobody wins!");
         }
         else {
-            System.out.println("Player 2 wins!");
+            System.out.println("Player 2 wins the game!");
         }
 
 
