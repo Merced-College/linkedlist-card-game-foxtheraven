@@ -46,6 +46,7 @@ public class CardGame {
             }
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
+        }
 
         // Print the loaded cards
         System.out.println("Cards loaded:");
