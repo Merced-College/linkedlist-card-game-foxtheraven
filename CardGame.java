@@ -58,33 +58,29 @@ public class CardGame {
         int player2Wins = 0;
         
         //The game runs while the roundCount is under 3, so three rounds are played
+        //Edit on 11/20 - Changed card arrays to single card objects,
+        //since there was no reason to use an array for one card
         while (roundCount < 3) {
             //Each player's card is initialized
-		    Card[] player1Hand = new Card[1];
-		    for(int i = 0; i < player1Hand.length; i++)
-			    player1Hand[i] = cardList.getFirst();
+		    Card player1Hand = cardList.getFirst();
             
-            Card[] player2Hand = new Card[1];
-		    for(int i = 0; i < player2Hand.length; i++)
-			    player2Hand[i] = cardList.getFirst();
+            Card player2Hand = cardList.getFirst();
 
             //Each player's card is printed
 		    System.out.println("Player 1's card");
-		    for(int i = 0; i < player1Hand.length; i++)
-			    System.out.println(player1Hand[i]);
+			System.out.println(player1Hand);
             System.out.println("Player 2's card");
-            for(int i = 0; i < player2Hand.length; i++)
-		    	System.out.println(player2Hand[i]);
+		    System.out.println(player2Hand);
 
             //Compare the card values to determine the round's winner,
             //and increment their win count
             //If it's a draw, no win count is increased
-            if (player1Hand[0].getCardValue() > player2Hand[0].getCardValue()) {
+            if (player1Hand.getCardValue() > player2Hand.getCardValue()) {
                 System.out.println("Player 1 wins this round!");
                 player1Wins++;
             }
       
-            else if (player1Hand[0].getCardValue() == player2Hand[0].getCardValue()) {
+            else if (player1Hand.getCardValue() == player2Hand.getCardValue()) {
                 System.out.println("It's a draw!");
             }
             else {
